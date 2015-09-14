@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentTemperatureLabel: UILabel?
     @IBOutlet weak var currentHumidityLabel: UILabel?
     @IBOutlet weak var currentPrecipitationLabel: UILabel?
+    @IBOutlet weak var currentWeatherIcon: UIImageView?
+    @IBOutlet weak var currentWeatherSummary: UILabel?
     
     private let forecastAPIKey = "176cd129c5d339df83810066b26b5d7d"
     let coordinat: (lat: Double, long: Double) = (37.8267,-122.423)
@@ -37,6 +39,14 @@ class ViewController: UIViewController {
                     
                     if let precipitation = currentWeather.precipProbabitily {
                         self.currentPrecipitationLabel?.text = "\(precipitation)%"
+                    }
+                    
+                    if let icon = currentWeather.icon {
+                        self.currentWeatherIcon?.image = icon
+                    }
+                    
+                    if let summary = currentWeather.summary {
+                        self.currentWeatherSummary?.text = summary
                     }
                 }
             }
