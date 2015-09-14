@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+
+
 enum Icon: String {
     case ClearDay = "clear-day"
     case ClearNight = "clear-night"
@@ -30,7 +32,7 @@ struct CurrentWeather {
     let humidity: Int?
     let precipProbabitily: Int?
     let summary: String?
-    let icon: UIImage? = UIImage(named: "default.png")
+    var icon: UIImage? = UIImage(named: "default.png")
     
     init(weatherDictionary: [String: AnyObject]) {
         temperature = weatherDictionary["temperature"] as? Int
@@ -45,5 +47,42 @@ struct CurrentWeather {
             precipProbabitily = nil
         }
         summary = weatherDictionary["summary"] as? String
+        
+        if let iconString = weatherDictionary["icon"] as? String {
+            icon = weatherImageFromIconString(iconString)
+        }
     }
+    
+    func weatherImageFromIconString(iconString: String) -> UIImage? {
+        var imageName: String
+        
+        if let iconValue = Icon(rawValue: iconString) {
+            switch iconValue {
+            case .ClearDay:
+                imageName = "clear-day.png"
+            case .ClearNight:
+                imageName = "clear-night.png"
+            case .Rain:
+                imageName = "rain.png"
+            case .Snow:
+                imageName = "snow.png"
+            case .Sleet:
+                imageName = "sleet.png"
+            case .Wind:
+                imageName = "wind.png"
+            case .Fog:
+                imageName = "fog.png"
+            case .Cloudy:
+                imageName = "cloudy.png"
+            case .PartlyCloudyDay:
+                imageName = "cloudy-day.png"
+            case .PartlyCloudyNight:
+                imageName = "cloudy-night.png"
+            }
+        } else {
+            imageName = "default.png"
+        }
+        return UIImage(named: imageName)
+    }
+    
 }
