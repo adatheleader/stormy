@@ -12,6 +12,8 @@ class WeeklyTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = BackgroundView()
 
     }
 

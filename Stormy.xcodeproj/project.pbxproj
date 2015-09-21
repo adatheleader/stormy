@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		354EEBDE1BB035D700EDB6A2 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EEBDD1BB035D700EDB6A2 /* WeeklyTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		354EEBE01BB0484A00EDB6A2 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EEBDF1BB0484A00EDB6A2 /* BackgroundView.swift */; settings = {ASSET_TAGS = (); }; };
 		358714681B95BB4F00C03515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358714671B95BB4F00C03515 /* AppDelegate.swift */; };
 		3587146A1B95BB4F00C03515 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358714691B95BB4F00C03515 /* ViewController.swift */; };
 		3587146D1B95BB4F00C03515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3587146B1B95BB4F00C03515 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		354EEBDD1BB035D700EDB6A2 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
+		354EEBDF1BB0484A00EDB6A2 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		358714621B95BB4F00C03515 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358714661B95BB4F00C03515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358714671B95BB4F00C03515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				3587146B1B95BB4F00C03515 /* Main.storyboard */,
+				354EEBDF1BB0484A00EDB6A2 /* BackgroundView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				35E319B51BA2FA1500A714A2 /* NetworkOperation.swift in Sources */,
 				3587146A1B95BB4F00C03515 /* ViewController.swift in Sources */,
 				3587148C1B95C94300C03515 /* CurrentWeather.swift in Sources */,
+				354EEBE01BB0484A00EDB6A2 /* BackgroundView.swift in Sources */,
 				354EEBDE1BB035D700EDB6A2 /* WeeklyTableViewController.swift in Sources */,
 				35E319B71BA3085B00A714A2 /* ForecastService.swift in Sources */,
 				358714681B95BB4F00C03515 /* AppDelegate.swift in Sources */,
