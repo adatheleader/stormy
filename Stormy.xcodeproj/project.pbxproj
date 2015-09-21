@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354EEBDE1BB035D700EDB6A2 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EEBDD1BB035D700EDB6A2 /* WeeklyTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		358714681B95BB4F00C03515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358714671B95BB4F00C03515 /* AppDelegate.swift */; };
 		3587146A1B95BB4F00C03515 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358714691B95BB4F00C03515 /* ViewController.swift */; };
 		3587146D1B95BB4F00C03515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3587146B1B95BB4F00C03515 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		354EEBDD1BB035D700EDB6A2 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
 		358714621B95BB4F00C03515 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358714661B95BB4F00C03515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358714671B95BB4F00C03515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,9 +41,9 @@
 		358714771B95BB4F00C03515 /* StormyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StormyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3587147C1B95BB4F00C03515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3587147D1B95BB4F00C03515 /* StormyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormyTests.swift; sourceTree = "<group>"; };
-		3587148B1B95C94300C03515 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
-		35E319B41BA2FA1500A714A2 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
-		35E319B61BA3085B00A714A2 /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
+		3587148B1B95C94300C03515 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentWeather.swift; path = Stormy/CurrentWeather.swift; sourceTree = "<group>"; };
+		35E319B41BA2FA1500A714A2 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkOperation.swift; path = Stormy/NetworkOperation.swift; sourceTree = "<group>"; };
+		35E319B61BA3085B00A714A2 /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastService.swift; path = Stormy/ForecastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354EEBDA1BB0346E00EDB6A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				358714691B95BB4F00C03515 /* ViewController.swift */,
+				354EEBDD1BB035D700EDB6A2 /* WeeklyTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		354EEBDB1BB0348F00EDB6A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3587146B1B95BB4F00C03515 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		354EEBDC1BB034E400EDB6A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3587148B1B95C94300C03515 /* CurrentWeather.swift */,
+				35E319B61BA3085B00A714A2 /* ForecastService.swift */,
+				35E319B41BA2FA1500A714A2 /* NetworkOperation.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		358714591B95BB4F00C03515 = {
 			isa = PBXGroup;
 			children = (
@@ -83,15 +113,12 @@
 		358714641B95BB4F00C03515 /* Stormy */ = {
 			isa = PBXGroup;
 			children = (
-				3587148B1B95C94300C03515 /* CurrentWeather.swift */,
-				358714671B95BB4F00C03515 /* AppDelegate.swift */,
-				358714691B95BB4F00C03515 /* ViewController.swift */,
-				35E319B61BA3085B00A714A2 /* ForecastService.swift */,
-				3587146B1B95BB4F00C03515 /* Main.storyboard */,
+				354EEBDC1BB034E400EDB6A2 /* Models */,
+				354EEBDB1BB0348F00EDB6A2 /* Views */,
+				354EEBDA1BB0346E00EDB6A2 /* Controller */,
 				3587146E1B95BB4F00C03515 /* Images.xcassets */,
 				358714701B95BB4F00C03515 /* LaunchScreen.xib */,
 				358714651B95BB4F00C03515 /* Supporting Files */,
-				35E319B41BA2FA1500A714A2 /* NetworkOperation.swift */,
 			);
 			path = Stormy;
 			sourceTree = "<group>";
@@ -99,6 +126,7 @@
 		358714651B95BB4F00C03515 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				358714671B95BB4F00C03515 /* AppDelegate.swift */,
 				358714661B95BB4F00C03515 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -165,7 +193,9 @@
 		3587145A1B95BB4F00C03515 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = OnlineLab;
 				TargetAttributes = {
 					358714611B95BB4F00C03515 = {
@@ -224,6 +254,7 @@
 				35E319B51BA2FA1500A714A2 /* NetworkOperation.swift in Sources */,
 				3587146A1B95BB4F00C03515 /* ViewController.swift in Sources */,
 				3587148C1B95C94300C03515 /* CurrentWeather.swift in Sources */,
+				354EEBDE1BB035D700EDB6A2 /* WeeklyTableViewController.swift in Sources */,
 				35E319B71BA3085B00A714A2 /* ForecastService.swift in Sources */,
 				358714681B95BB4F00C03515 /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +319,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -354,6 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Stormy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -364,6 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Stormy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -382,6 +416,7 @@
 				);
 				INFOPLIST_FILE = StormyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stormy.app/Stormy";
 			};
@@ -397,6 +432,7 @@
 				);
 				INFOPLIST_FILE = StormyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stormy.app/Stormy";
 			};
