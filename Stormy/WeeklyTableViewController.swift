@@ -21,9 +21,7 @@ class WeeklyTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.backgroundView = BackgroundView()
-        
+        configureView()
         retrieveWeatherForecast()
 
     }
@@ -31,6 +29,22 @@ class WeeklyTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func configureView() {
+    
+        // Set table view's background view property
+        tableView.backgroundView = BackgroundView()
+        
+        // Change the size and font of nav bar text
+        if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
     }
 
     // MARK: - Table view data source
@@ -59,7 +73,7 @@ class WeeklyTableViewController: UITableViewController {
                     }
                     
                     if let precipitation = currentWeather.precipProbabitily {
-                        self.currentPrecipitationLabel?.text = "\(precipitation)%"
+                        self.currentPrecipitationLabel?.text = "Rain: \(precipitation)%"
                     }
                     
                     if let icon = currentWeather.icon {

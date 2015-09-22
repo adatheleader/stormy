@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Weekly Table View Controller-->
+        <!--Weekly-->
         <scene sceneID="vsl-op-K3T">
             <objects>
                 <tableViewController id="pLA-iy-yXb" customClass="WeeklyTableViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="gEu-bn-JyE" firstAttribute="leading" secondItem="80u-oq-77v" secondAttribute="leading" constant="8" id="2fY-JL-ZyD"/>
                                 <constraint firstItem="Okm-2u-6Ld" firstAttribute="centerY" secondItem="80u-oq-77v" secondAttribute="centerY" constant="41.5" id="7mD-n1-iSI"/>
@@ -81,7 +81,7 @@
                             <outlet property="delegate" destination="pLA-iy-yXb" id="eNh-fI-acD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0ay-EK-5xQ"/>
+                    <navigationItem key="navigationItem" title="Weekly" id="0ay-EK-5xQ"/>
                     <connections>
                         <outlet property="currentPrecipitationLabel" destination="gEu-bn-JyE" id="EqO-UH-qTz"/>
                         <outlet property="currentTemperatureLabel" destination="ffQ-DC-ypg" id="jqz-Ie-2FQ"/>
@@ -116,9 +116,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cXv-ug-Kdd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iWI-hq-5Sk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="iWI-hq-5Sk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.66666666666666663" green="0.51372549019607838" blue="0.8784313725490196" alpha="0.5" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
