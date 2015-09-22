@@ -19,6 +19,8 @@ class WeeklyTableViewController: UITableViewController {
     let coordinat: (lat: Double, long: Double) = (37.8267,-122.423)
     
     
+    var weeklyWeather: [DailyWeather] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -50,13 +52,23 @@ class WeeklyTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // return the number of sections
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // return the number of rows
+        return weeklyWeather.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell")!
+        
+        let dailyWeather = weeklyWeather[indexPath.row]
+        cell.textLabel?.text = dailyWeather.day
+        
+        
+        return cell
     }
     
     // MARK: - Weather Fetching
@@ -64,8 +76,9 @@ class WeeklyTableViewController: UITableViewController {
     func retrieveWeatherForecast() {
         let forecastService = ForecastService(APIKey: forecastAPIKey)
         forecastService.getForecast(coordinat.lat, long: coordinat.long){
-            (let currently) in
-            if let currentWeather = currently {
+            (let forecast) in
+            if let weatherForecast = forecast,
+            let currentWeather = weatherForecast.currentWeather {
                 dispatch_async(dispatch_get_main_queue()) {
                     
                     if let tempereture = currentWeather.temperature {
@@ -80,6 +93,14 @@ class WeeklyTableViewController: UITableViewController {
                         self.currentWeatherIcon?.image = icon
                     }
                     
+                    self.weeklyWeather = weatherForecast.weekly
+                    
+                    if let highTemp = self.weeklyWeather.first?.maxTemperature,
+                        let lowTemp = self.weeklyWeather.first?.minTemperature {
+                            self.currentTemperatureRangeLabel?.text = "↑\(highTemp)º↓\(lowTemp)º"
+                    }
+                    
+                    self.tableView.reloadData()
                 }
             }
         }
