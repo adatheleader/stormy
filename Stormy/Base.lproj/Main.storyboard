@@ -128,7 +128,7 @@
                                     <outlet property="dayLabel" destination="TSF-u3-e9a" id="PKu-lU-D8U"/>
                                     <outlet property="temperatureLabel" destination="niC-iU-N27" id="CC8-FE-CAZ"/>
                                     <outlet property="weatherIcon" destination="Enm-fK-HGv" id="SnM-IR-6YK"/>
-                                    <segue destination="vXZ-lx-hvc" kind="show" id="RBe-qP-irF"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="showDaily" id="RBe-qP-irF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -184,6 +184,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.66666666666666663" green="0.51372549019607838" blue="0.8784313725490196" alpha="0.5" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
