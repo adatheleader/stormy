@@ -50,7 +50,23 @@ class WeeklyTableViewController: UITableViewController {
             ]
             navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
         }
+        
+        // Position refresh control above background view
+        refreshControl?.layer.zPosition = (tableView.backgroundView?.layer.zPosition)! + 1
+        
+        refreshControl?.tintColor = UIColor.whiteColor()
     }
+    
+    @IBAction func refreshWeather() {
+        
+        retrieveWeatherForecast()
+        refreshControl?.endRefreshing()
+    }
+    
+    
+    
+    
+    
 
     // MARK: - Table view data source
 
