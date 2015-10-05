@@ -39,6 +39,9 @@ class WeeklyTableViewController: UITableViewController {
         // Set table view's background view property
         tableView.backgroundView = BackgroundView()
         
+        // Set custom height for tabel view row
+        tableView.rowHeight = 64
+        
         // Change the size and font of nav bar text
         if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
             let navBarAttributesDictionary: [String: AnyObject]? = [
@@ -62,11 +65,14 @@ class WeeklyTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell") as! DailyWeatherTabelViewCellTableViewCell
         
         let dailyWeather = weeklyWeather[indexPath.row]
-        cell.textLabel?.text = dailyWeather.day
-        
+        if let maxTemp = dailyWeather.maxTemperature {
+            cell.temperatureLabel.text = "\(maxTemp)º"
+        }
+        cell.weatherIcon.image = dailyWeather.icon
+        cell.dayLabel.text = dailyWeather.day
         
         return cell
     }
