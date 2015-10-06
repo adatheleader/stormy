@@ -17,7 +17,7 @@ class WeeklyTableViewController: UITableViewController {
     
     private let forecastAPIKey = "176cd129c5d339df83810066b26b5d7d"
     let coordinat: (lat: Double, long: Double) = (52.7574,41.4325)
-    
+    let APIoptions = "?units=si&lang=ru"
     
     var weeklyWeather: [DailyWeather] = []
     
@@ -130,7 +130,7 @@ class WeeklyTableViewController: UITableViewController {
     
     func retrieveWeatherForecast() {
         let forecastService = ForecastService(APIKey: forecastAPIKey)
-        forecastService.getForecast(coordinat.lat, long: coordinat.long){
+        forecastService.getForecast(coordinat.lat, long: coordinat.long, APIoptions: APIoptions){
             (let forecast) in
             if let weatherForecast = forecast,
             let currentWeather = weatherForecast.currentWeather {

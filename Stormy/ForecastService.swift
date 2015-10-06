@@ -17,8 +17,8 @@ struct ForecastService {
         forecastBaseURL = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
     }
     
-    func getForecast (lat: Double, long: Double, completion: (Forecast? -> Void)) {
-        if let forecastURL = NSURL(string: "\(lat),\(long)", relativeToURL: forecastBaseURL){
+    func getForecast (lat: Double, long: Double, APIoptions: String, completion: (Forecast? -> Void)) {
+        if let forecastURL = NSURL(string: "\(lat),\(long)\(APIoptions)", relativeToURL: forecastBaseURL){
         
             let networkOperation = NetworkOperation(url: forecastURL)
             
