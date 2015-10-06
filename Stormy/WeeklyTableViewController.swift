@@ -16,7 +16,7 @@ class WeeklyTableViewController: UITableViewController {
     @IBOutlet weak var currentTemperatureRangeLabel: UILabel?
     
     private let forecastAPIKey = "176cd129c5d339df83810066b26b5d7d"
-    let coordinat: (lat: Double, long: Double) = (37.8267,-122.423)
+    let coordinat: (lat: Double, long: Double) = (52.7574,41.4325)
     
     
     var weeklyWeather: [DailyWeather] = []
