@@ -167,13 +167,61 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_large" translatesAutoresizingMaskIntoConstraints="NO" id="Vmx-Aa-KzL">
+                                <rect key="frame" x="250" y="156" width="100" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="I5K-jQ-tcI"/>
+                                    <constraint firstAttribute="height" constant="100" id="yzl-iS-Mra"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly cloudy starting in the afternoon, continuing until evening." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ey0-UN-CnQ">
+                                <rect key="frame" x="163" y="287" width="275" height="43"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="zZu-ai-EiO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.37647058820000001" green="0.074509803920000006" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vmx-Aa-KzL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="63w-jV-040"/>
+                            <constraint firstItem="Ey0-UN-CnQ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="223" id="BDH-tv-jfx"/>
+                            <constraint firstItem="Ey0-UN-CnQ" firstAttribute="top" secondItem="Vmx-Aa-KzL" secondAttribute="bottom" constant="31" id="ISN-kh-iD9"/>
+                            <constraint firstItem="Ey0-UN-CnQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="243" id="JBX-gw-gOl"/>
+                            <constraint firstItem="Vmx-Aa-KzL" firstAttribute="centerX" secondItem="Ey0-UN-CnQ" secondAttribute="centerX" id="Kgi-0X-tds"/>
+                            <constraint firstItem="Vmx-Aa-KzL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="87" id="NIl-Sf-unK"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Vmx-Aa-KzL" secondAttribute="trailing" constant="100" id="UZE-ne-A5h"/>
+                            <constraint firstItem="Ey0-UN-CnQ" firstAttribute="top" secondItem="Vmx-Aa-KzL" secondAttribute="bottom" constant="70" id="eYC-C4-vQ0"/>
+                            <constraint firstItem="Vmx-Aa-KzL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="230" id="ecj-am-vxq"/>
+                            <constraint firstItem="Vmx-Aa-KzL" firstAttribute="centerX" secondItem="Ey0-UN-CnQ" secondAttribute="centerX" id="fbE-sS-Fmr"/>
+                            <constraint firstItem="Ey0-UN-CnQ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="v4g-sD-U0S"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="63w-jV-040"/>
+                                <exclude reference="NIl-Sf-unK"/>
+                                <exclude reference="UZE-ne-A5h"/>
+                                <exclude reference="ecj-am-vxq"/>
+                                <exclude reference="fbE-sS-Fmr"/>
+                                <exclude reference="JBX-gw-gOl"/>
+                                <exclude reference="eYC-C4-vQ0"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="currentWeatherIcon" destination="Vmx-Aa-KzL" id="ulU-kx-Inq"/>
+                        <outlet property="summary" destination="Ey0-UN-CnQ" id="ITR-eg-KBZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="337"/>
+            <point key="canvasLocation" x="1152" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FGW-0w-UDz">
@@ -200,6 +248,7 @@
     <resources>
         <image name="clear-day" width="58" height="60"/>
         <image name="default" width="28" height="28"/>
+        <image name="default_large" width="72" height="72"/>
         <image name="temperatureIconBG" width="42" height="43"/>
     </resources>
 </document>

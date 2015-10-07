@@ -17,7 +17,7 @@ class WeeklyTableViewController: UITableViewController {
     
     private let forecastAPIKey = "176cd129c5d339df83810066b26b5d7d"
     let coordinat: (lat: Double, long: Double) = (52.7574,41.4325)
-    let APIoptions = "?units=si&lang=ru"
+    let APIoptions = "?units=si"
     
     var weeklyWeather: [DailyWeather] = []
     
@@ -136,8 +136,8 @@ class WeeklyTableViewController: UITableViewController {
             let currentWeather = weatherForecast.currentWeather {
                 dispatch_async(dispatch_get_main_queue()) {
                     
-                    if let tempereture = currentWeather.temperature {
-                        self.currentTemperatureLabel?.text = "\(tempereture)º"
+                    if let temperature = currentWeather.temperature {
+                        self.currentTemperatureLabel?.text = "\(temperature)º"
                     }
                     
                     if let precipitation = currentWeather.precipProbabitily {
