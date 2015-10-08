@@ -17,7 +17,7 @@ class WeeklyTableViewController: UITableViewController {
     
     private let forecastAPIKey = "176cd129c5d339df83810066b26b5d7d"
     let coordinat: (lat: Double, long: Double) = (52.7574,41.4325)
-    let APIoptions = "?units=si"
+    let APIoptions = "?units=si&lang=ru"
     
     var weeklyWeather: [DailyWeather] = []
     
@@ -86,7 +86,7 @@ class WeeklyTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Forecast"
+        return "Прогноз погоды"
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,7 +141,7 @@ class WeeklyTableViewController: UITableViewController {
                     }
                     
                     if let precipitation = currentWeather.precipProbabitily {
-                        self.currentPrecipitationLabel?.text = "Rain: \(precipitation)%"
+                        self.currentPrecipitationLabel?.text = "Дождь: \(precipitation)%"
                     }
                     
                     if let icon = currentWeather.icon {
