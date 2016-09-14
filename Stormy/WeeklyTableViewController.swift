@@ -75,9 +75,6 @@ class WeeklyTableViewController: UITableViewController {
         }
     }
 
-    
-    
-
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -127,7 +124,6 @@ class WeeklyTableViewController: UITableViewController {
     }
     
     // MARK: - Weather Fetching
-    
     func retrieveWeatherForecast() {
         let forecastService = ForecastService(APIKey: forecastAPIKey)
         forecastService.getForecast(coordinat.lat, long: coordinat.long, APIoptions: APIoptions){
