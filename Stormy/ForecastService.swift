@@ -10,20 +10,20 @@ import Foundation
 
 struct ForecastService {
     let forecastAPIKey: String
-    let forecastBaseURL: NSURL?
+    let forecastBaseURL: URL?
     
     init(APIKey: String) {
         forecastAPIKey = APIKey
-        forecastBaseURL = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
+        forecastBaseURL = URL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
     }
     
-    func getForecast (lat: Double, long: Double, APIoptions: String, completion: (Forecast? -> Void)) {
-        if let forecastURL = NSURL(string: "\(lat),\(long)\(APIoptions)", relativeToURL: forecastBaseURL){
+    func getForecast (_ lat: Double, long: Double, APIoptions: String, completion: @escaping ((Forecast?) -> Void)) {
+        if let forecastURL = URL(string: "\(lat),\(long)\(APIoptions)", relativeTo: forecastBaseURL){
         
             let networkOperation = NetworkOperation(url: forecastURL)
             
             networkOperation.downloadJSONFromURL{
-                (let JSONDictionary) in
+                (JSONDictionary) in
                 let forecast = Forecast(weatherDictionary: JSONDictionary!)
                 completion(forecast)
             }

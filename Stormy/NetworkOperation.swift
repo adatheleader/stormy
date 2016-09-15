@@ -10,31 +10,31 @@ import Foundation
 
 class NetworkOperation {
     
-    lazy var config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-    lazy var session: NSURLSession = NSURLSession(configuration: self.config)
-    let queryURL: NSURL
+    lazy var config: URLSessionConfiguration = URLSessionConfiguration.default
+    lazy var session: URLSession = URLSession(configuration: self.config)
+    let queryURL: URL
     
     typealias JSONDictionaryCompletion = ([String: AnyObject]?) -> Void
     
-    init(url: NSURL){
+    init(url: URL){
         self.queryURL = url
     }
     
     
     
-    func downloadJSONFromURL (completion: JSONDictionaryCompletion) {
-        let request: NSURLRequest = NSURLRequest(URL: queryURL)
-        let dataTask = session.dataTaskWithRequest(request) {
-            (let data, let response, let error) in
+    func downloadJSONFromURL (_ completion: @escaping JSONDictionaryCompletion) {
+        let request: URLRequest = URLRequest(url: queryURL)
+        let dataTask = session.dataTask(with: request, completionHandler: {
+            (data, response, error) in
             
             // 1. Check HTTP response for successful GET response
             
-            if let httpResponse = response as? NSHTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse {
                 
                 switch(httpResponse.statusCode) {
                 case 200:
                     // 2. Create JSON object with data
-                    let JSONDictionary = (try? NSJSONSerialization.JSONObjectWithData(data!, options: [])) as? [String: AnyObject]
+                    let JSONDictionary = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String: AnyObject]
                     completion(JSONDictionary)
                 default:
                     print("GET request not successful. HTTP status code: \(httpResponse.statusCode)")
@@ -43,7 +43,7 @@ class NetworkOperation {
             } else {
                 print("Error: Nor a valid HTTP response")
             }
-        }
+        }) 
         
         dataTask.resume()
     }

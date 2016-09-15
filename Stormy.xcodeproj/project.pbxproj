@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		354EEBDE1BB035D700EDB6A2 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EEBDD1BB035D700EDB6A2 /* WeeklyTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		354EEBE01BB0484A00EDB6A2 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EEBDF1BB0484A00EDB6A2 /* BackgroundView.swift */; settings = {ASSET_TAGS = (); }; };
+		354EEBDE1BB035D700EDB6A2 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EEBDD1BB035D700EDB6A2 /* WeeklyTableViewController.swift */; };
+		354EEBE01BB0484A00EDB6A2 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EEBDF1BB0484A00EDB6A2 /* BackgroundView.swift */; };
 		358714681B95BB4F00C03515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358714671B95BB4F00C03515 /* AppDelegate.swift */; };
 		3587146A1B95BB4F00C03515 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358714691B95BB4F00C03515 /* ViewController.swift */; };
 		3587146D1B95BB4F00C03515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3587146B1B95BB4F00C03515 /* Main.storyboard */; };
@@ -18,10 +18,10 @@
 		3587148C1B95C94300C03515 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587148B1B95C94300C03515 /* CurrentWeather.swift */; };
 		35E319B51BA2FA1500A714A2 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E319B41BA2FA1500A714A2 /* NetworkOperation.swift */; };
 		35E319B71BA3085B00A714A2 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E319B61BA3085B00A714A2 /* ForecastService.swift */; };
-		35EA15AB1BC28C1500B02C4B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15AA1BC28C1500B02C4B /* Forecast.swift */; settings = {ASSET_TAGS = (); }; };
-		35EA15AD1BC28C2800B02C4B /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15AC1BC28C2800B02C4B /* Icon.swift */; settings = {ASSET_TAGS = (); }; };
-		35EA15AF1BC28C3A00B02C4B /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15AE1BC28C3A00B02C4B /* DailyWeather.swift */; settings = {ASSET_TAGS = (); }; };
-		35EA15B11BC2A8C500B02C4B /* DailyWeatherTabelViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15B01BC2A8C500B02C4B /* DailyWeatherTabelViewCellTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		35EA15AB1BC28C1500B02C4B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15AA1BC28C1500B02C4B /* Forecast.swift */; };
+		35EA15AD1BC28C2800B02C4B /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15AC1BC28C2800B02C4B /* Icon.swift */; };
+		35EA15AF1BC28C3A00B02C4B /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15AE1BC28C3A00B02C4B /* DailyWeather.swift */; };
+		35EA15B11BC2A8C500B02C4B /* DailyWeatherTabelViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA15B01BC2A8C500B02C4B /* DailyWeatherTabelViewCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,9 +224,11 @@
 					358714611B95BB4F00C03515 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 7987TC552M;
+						LastSwiftMigration = 0800;
 					};
 					358714761B95BB4F00C03515 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 						TestTargetID = 358714611B95BB4F00C03515;
 					};
 				};
@@ -420,6 +422,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -434,6 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -453,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stormy.app/Stormy";
 			};
 			name = Debug;
@@ -469,6 +474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.khashin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stormy.app/Stormy";
 			};
 			name = Release;
